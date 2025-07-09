@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Resultado</title>
+</head>
+<body>
+    {% if encrypted %}
+        <h3>🔐 Frase criptografada:</h3>
+        <p><strong>Encrypted:</strong> {{ encrypted }}</p>
+        <p><strong>Token 1:</strong> {{ token1 }}</p>
+        {% if success is defined %}
+            <p><strong>Verificação:</strong> {{ 'Sucesso' if success else 'Falhou' }}</p>
+        {% endif %}
+    {% elif decrypted %}
+        <h3>🔓 Frase descriptografada:</h3>
+        <p><strong>Decrypted:</strong> {{ decrypted }}</p>
+        <p><strong>Token 1:</strong> {{ token1 }}</p>
+        <p><strong>Token 2:</strong> {{ token2 }}</p>
+    {% endif %}
+</body>
+</html>
